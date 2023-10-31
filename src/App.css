@@ -1,83 +1,54 @@
-.wrapper { 
-padding-top: 30px; 
-} 
+.wrapper {
+  padding-top: 30px;
+}
 
-body h3 { 
-margin-bottom: 25px; 
-} 
+body h3 {
+  margin-bottom: 25px;
+}
 
-.navbar-brand a { 
-color: #ffffff; 
-} 
+.navbar-brand a {
+  color: #ffffff;
+}
 
-.form-wrapper, 
-.table-wrapper { 
-max-width: 500px; 
-margin: 0 auto; 
-} 
+.form-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
 
-.table-wrapper { 
-max-width: 700px; 
-} 
+.table-wrapper {
+  margin: 0 auto;
+}
 
-.edit-link { 
-padding: 7px 10px; 
-font-size: 0.875rem; 
-line-height: normal; 
-border-radius: 0.2rem; 
-color: #fff; 
-background-color: #28a745; 
-border-color: #28a745; 
-margin-right: 10px; 
-position: relative; 
-top: 1px; 
-} 
+.edit-link {
+  padding: 7px 10px;
+  font-size: 0.875rem;
+  line-height: normal;
+  border-radius: 0.2rem;
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  margin-right: 10px;
+  position: relative;
+  top: 1px;
+}
 
-.edit-link:hover { 
-text-decoration: none; 
-color: #ffffff; 
-} 
+.edit-link:hover {
+  text-decoration: none;
+  color: #ffffff;
+}
 
 /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button, 
-input::-webkit-inner-spin-button { 
--webkit-appearance: none; 
-margin: 0; 
-} 
-th,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 td {
-  border: 1px solid #bfc3c8;
+  min-width: 200px;
 }
 
-table {
-  border-spacing: 0;
-  border-collapse: separate;
-  border-radius: 5px;
-  border: 1px solid black;
-}
-
-table tr {
-  will-change: color;
-}
-
-table td,
-table th {
-  padding: 5px;
-}
-
-table th {
-  min-width: 100px;
-}
-
-table td {
-  background: inherit;
-}
-
-table tr td {
-  transition: all 1s;
-  width: 200px;
-}
 /* Firefox */
-input[type=number] { 
--moz-appearance: textfield; 
+input[type="number"] {
+  -moz-appearance: textfield;
 }

@@ -13,12 +13,14 @@ const CreateStudent = () => {
     time: "",
   });
   // onSubmit handler
-  const onSubmit = (studentObject) => {
+  const onSubmit = (studentObject, action) => {
     axios
       .post("http://localhost:4000/students/create-student", studentObject)
       .then((res) => {
-        if (res.status === 200) alert("Student successfully created");
-        else Promise.reject();
+        if (res.status === 200) {
+          alert("Student successfully created");
+          action.resetForm();
+        } else Promise.reject();
       })
       .catch((err) => alert("Something went wrong"));
   };

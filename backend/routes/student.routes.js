@@ -118,7 +118,7 @@ router
   .get(async (req, res, next) => {
     const { StudentsCollection } = global;
 
-    await StudentsCollection.findOne({ _id: req.params.id })
+    await StudentsCollection.findOne({ _id: ObjectId(req.params.id) })
       .then((data) => {
         res.json(data);
       })
@@ -130,10 +130,32 @@ router
   // Update Student Data
   .put(async (req, res, next) => {
     const { StudentsCollection } = global;
+    const { teacherEmail, studentEmail, time } = req.body;
+    const meetingData = {
+      topic: "Class Meeting",
+      type: 2, // Scheduled meeting
+      start_time: new Date(time).toISOString(),
+      duration: 60, // Meeting duration in minutes
+    };
+    const zoomMeetingDetails = await createMeeting(
+      meetingData,
+      teacherEmail,
+      studentEmail
+    );
+    const { id, join_url, start_time } = zoomMeetingDetails;
+
+    // Insert the meeting details into your database
+    const meetingDocument = {
+      teacherEmail,
+      studentEmail,
+      time: start_time,
+      zoomMeetingId: id,
+      zoomLink: join_url,
+    };
 
     await StudentsCollection.updateOne(
-      { _id: req.params.id },
-      { $set: req.body }
+      { _id: ObjectId(req.params.id) },
+      { $set: meetingDocument }
     )
       .then((data) => {
         res.json(data);

@@ -14,7 +14,7 @@ const studentRoute = require("../backend/routes/student.routes");
 
 (async () => {
   let retryCount = 1;
-  const nativeClient = new MongoClient(process.env.MONGO_DB_URI, {
+  const nativeClient = new MongoClient(mongoURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

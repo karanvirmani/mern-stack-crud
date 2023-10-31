@@ -23,7 +23,11 @@ const StudentTableRow = (props) => {
       <td>{teacherEmail}</td>
       <td>{studentEmail}</td>
       <td>{time}</td>
-      <td>{zoomLink}</td>
+      <td>
+        <a href={zoomLink} rel="noreferrer" target="_blank">
+          {zoomLink}
+        </a>
+      </td>
       <td>
         <Link className="edit-link" to={"/edit-student/" + _id}>
           Edit
